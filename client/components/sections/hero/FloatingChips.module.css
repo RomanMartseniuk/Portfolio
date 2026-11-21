@@ -1,0 +1,43 @@
+/* Covers the portrait so chips can be positioned against it */
+.layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.chip {
+  position: absolute;
+  padding: 8px 12px;
+  border-radius: var(--r-2xl);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 16px;
+  /* "translate" (not "transform") so it never fights GSAP's x / y */
+  animation: float 5s ease-in-out infinite;
+}
+.c1 {
+  left: -24px;
+  top: 16%;
+}
+.c2 {
+  right: -16px;
+  bottom: 22%;
+  animation-delay: -1.6s;
+}
+.c3 {
+  left: 8%;
+  bottom: -8px;
+  animation-delay: -3.2s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -12px;
+  }
+}

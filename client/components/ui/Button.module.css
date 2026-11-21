@@ -1,0 +1,43 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  transition:
+    background-color 300ms var(--ease),
+    color 300ms var(--ease),
+    border-color 300ms var(--ease);
+  will-change: transform;
+}
+.btn:hover {
+  background: transparent;
+  color: var(--accent);
+}
+.btn:active {
+  transform: scale(0.98);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--line);
+}
+.ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.sm {
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 24px;
+}

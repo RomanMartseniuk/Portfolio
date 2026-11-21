@@ -1,6 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Manrope } from "next/font/google";
+import { Cursor } from "@/components/effects/Cursor";
+import { ParallaxController } from "@/components/effects/ParallaxController";
+import { RevealController } from "@/components/effects/RevealController";
+import { ScrollProgress } from "@/components/effects/ScrollProgress";
 import { JsonLd } from "@/components/json-ld";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+import { SkipLink } from "@/components/ui/SkipLink";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -120,7 +127,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${manrope.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {children}
+        <SkipLink />
+        <ScrollProgress />
+        <Cursor />
+        <Header />
+        <main id="main">{children}</main>
+        <Footer />
+        {/* Global scroll effects. They render nothing and run after the page is in the DOM. */}
+        <RevealController />
+        <ParallaxController />
         <JsonLd data={structuredData} />
       </body>
     </html>

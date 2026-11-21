@@ -1,0 +1,105 @@
+.tl {
+  position: relative;
+  margin-top: 48px;
+  display: grid;
+  gap: 48px;
+  padding-left: 32px;
+}
+
+/* Grey track plus the coral fill that grows with scroll */
+.line {
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--line);
+}
+.line i {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+.job {
+  position: relative;
+  display: grid;
+  gap: 16px;
+}
+/* The dot on the line */
+.job::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+.job h3 {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 8px;
+  color: var(--muted);
+}
+.meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.org {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.summary {
+  margin-top: 16px;
+  color: var(--muted);
+  max-width: 720px;
+}
+
+.bullets {
+  margin-top: 16px;
+  display: grid;
+  gap: 8px;
+  max-width: 720px;
+}
+.bullets li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 24px;
+}
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 2px;
+  background: var(--accent);
+}
+
+@media (min-width: 768px) {
+  .tl {
+    padding-left: 48px;
+  }
+  .job {
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+  }
+  .job::before {
+    left: -48px;
+  }
+}

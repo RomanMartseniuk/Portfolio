@@ -1,0 +1,13 @@
+/* All phrases share one grid cell, so the box always fits the longest one */
+.rot {
+  display: inline-grid;
+  color: var(--accent);
+  overflow: hidden;
+}
+.rot span {
+  grid-area: 1 / 1;
+  opacity: 0;
+}
+.rot span:first-child {
+  opacity: 1;
+}

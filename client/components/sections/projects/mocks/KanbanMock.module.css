@@ -1,0 +1,21 @@
+.kan {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 12px;
+}
+.kan div {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+.kan i {
+  display: block;
+  height: 24px;
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+}
+.kan i.accent {
+  background: var(--accent);
+  height: 32px;
+}

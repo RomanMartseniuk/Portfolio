@@ -1,0 +1,152 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 128px 0 64px;
+  border-bottom: 1px solid var(--line);
+}
+
+.grid {
+  display: grid;
+  gap: 48px;
+  align-items: center;
+}
+
+/* "Open to new projects" pill with a pulsing dot */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  background: var(--surface);
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.pulse {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: ping 2s var(--ease) infinite;
+}
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+
+.hi {
+  margin-top: 24px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.h1 {
+  margin-top: 8px;
+  font-size: 48px;
+  line-height: 52px;
+  max-width: 680px;
+}
+/* The mask clips the words while they slide up during the intro */
+.mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 8px;
+  margin-bottom: -8px;
+}
+.grad {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffffff, #9b9b9b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  padding-right: 4px;
+}
+
+.rotLine {
+  margin-top: 24px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--muted);
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.lede {
+  margin-top: 16px;
+  max-width: 520px;
+  color: var(--muted);
+}
+
+.cta {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.stats {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 520px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.stat b {
+  display: block;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+}
+.stat span {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 160px 0 80px;
+  }
+  .grid {
+    grid-template-columns: 1fr 340px;
+    gap: 64px;
+  }
+  .h1 {
+    font-size: 72px;
+    line-height: 72px;
+  }
+}
+@media (min-width: 1100px) {
+  .grid {
+    grid-template-columns: 1fr 400px;
+  }
+  .h1 {
+    font-size: 96px;
+    line-height: 96px;
+  }
+}

@@ -1,0 +1,46 @@
+/* Hidden by default, shown only for mouse / trackpad */
+.cur {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 250;
+  pointer-events: none;
+  display: none;
+}
+.cur i {
+  display: block;
+  border-radius: 50%;
+}
+
+.dot i {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: var(--accent);
+}
+
+.ring i {
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  border: 1px solid var(--accent);
+  transition:
+    transform 300ms var(--ease),
+    opacity 300ms var(--ease);
+}
+/* Set from JS while the pointer is over something clickable */
+.ring[data-hot="true"] i {
+  transform: scale(1.75);
+  opacity: 0.6;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cur {
+    display: block;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cur {
+    display: none !important;
+  }
+}

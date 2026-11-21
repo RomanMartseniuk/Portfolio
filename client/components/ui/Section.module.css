@@ -1,0 +1,61 @@
+.sec {
+  position: relative;
+  padding: 80px 0;
+}
+.clip {
+  overflow: hidden;
+}
+.flushTop {
+  padding-top: 0;
+}
+.bordered {
+  border-top: 1px solid var(--line);
+}
+
+/* Small mono label with a line before it */
+.kicker {
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.kicker::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* Huge outlined section number, purely decorative */
+.num {
+  position: absolute;
+  right: 24px;
+  top: -8px;
+  z-index: 0;
+  font-size: 96px;
+  line-height: 96px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line);
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .sec {
+    padding: 96px 0;
+  }
+  .flushTop {
+    padding-top: 0;
+  }
+  .num {
+    font-size: 128px;
+    line-height: 128px;
+    right: 32px;
+    top: -24px;
+  }
+}

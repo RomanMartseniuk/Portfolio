@@ -1,0 +1,114 @@
+.nav {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 110;
+  width: calc(100% - 32px);
+  max-width: 720px;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 8px 8px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  background: rgba(24, 24, 24, 0.72);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+.logo span {
+  color: var(--accent);
+}
+
+/* Desktop links, hidden on mobile */
+.links {
+  display: none;
+  position: relative;
+  gap: 4px;
+}
+.links a {
+  position: relative;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color 300ms var(--ease);
+}
+.links a:hover,
+.on {
+  color: var(--text);
+}
+.indicator {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100px;
+  background: var(--accent);
+  transform-origin: left;
+  transform: translateX(0) scaleX(0);
+  transition: transform 500ms var(--ease);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.inner .cta {
+  display: none;
+}
+
+/* Hamburger -> X */
+.burger {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: transparent;
+  cursor: pointer;
+}
+.burger span {
+  display: grid;
+  gap: 4px;
+}
+.burger i {
+  display: block;
+  width: 16px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition:
+    transform 500ms var(--ease),
+    opacity 300ms var(--ease);
+}
+.burger[aria-expanded="true"] i:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.burger[aria-expanded="true"] i:nth-child(2) {
+  opacity: 0;
+}
+.burger[aria-expanded="true"] i:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (min-width: 768px) {
+  .links {
+    display: flex;
+  }
+  .burger {
+    display: none;
+  }
+  .inner .cta {
+    display: inline-flex;
+  }
+}

@@ -1,9 +1,28 @@
-// Temporary page: the real portfolio sections are ported here next.
+import { About } from "@/components/sections/about/About";
+import { Tagline } from "@/components/sections/about/Tagline";
+import { Contact } from "@/components/sections/contact/Contact";
+import { IdeaBand } from "@/components/sections/contact/IdeaBand";
+import { Experience } from "@/components/sections/experience/Experience";
+import { Hero } from "@/components/sections/hero/Hero";
+import { Projects } from "@/components/sections/projects/Projects";
+import { Stack } from "@/components/sections/stack/Stack";
+
+/**
+ * The whole portfolio is one page. Each section is its own component and
+ * reads its text from /data, so the page itself is only a list.
+ * Header, footer and global effects live in app/layout.tsx.
+ */
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
-      <h1 className="text-4xl font-bold tracking-tight">Roman Martseniuk</h1>
-      <p className="text-lg text-zinc-400">Full stack developer</p>
-    </main>
+    <>
+      <Hero />
+      <About />
+      <Tagline />
+      <Experience />
+      <Stack />
+      <Projects />
+      <IdeaBand />
+      <Contact />
+    </>
   );
 }

@@ -1,0 +1,28 @@
+.idea {
+  position: relative;
+  overflow: hidden;
+  padding: 96px 0;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+.idea h2 {
+  font-size: 36px;
+  line-height: 40px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.idea p {
+  margin: 24px auto 0;
+  max-width: 520px;
+  color: var(--muted);
+}
+.cta {
+  margin-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .idea h2 {
+    font-size: 48px;
+    line-height: 52px;
+  }
+}

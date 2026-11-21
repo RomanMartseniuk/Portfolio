@@ -1,0 +1,37 @@
+.tagline {
+  position: relative;
+  overflow: hidden;
+  padding: 96px 0;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.bg {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  opacity: 0.08;
+  filter: grayscale(1);
+  -webkit-mask-image: linear-gradient(to left, #000, transparent);
+  mask-image: linear-gradient(to left, #000, transparent);
+}
+
+.text {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  max-width: 960px;
+}
+
+@media (min-width: 768px) {
+  .text {
+    font-size: 48px;
+    line-height: 52px;
+  }
+}
