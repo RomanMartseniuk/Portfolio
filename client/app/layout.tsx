@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Geist_Mono, Manrope } from "next/font/google";
 import { Cursor } from "@/components/effects/Cursor";
 import { ParallaxController } from "@/components/effects/ParallaxController";
@@ -137,6 +139,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <RevealController />
         <ParallaxController />
         <JsonLd data={structuredData} />
+        {/* Vercel Web Analytics (visits) and Speed Insights (real user Core Web Vitals) */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
