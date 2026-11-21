@@ -108,7 +108,7 @@
 .stats {
   margin-top: 48px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   max-width: 520px;
   padding-top: 24px;
@@ -120,7 +120,8 @@
   line-height: 36px;
   letter-spacing: -0.02em;
 }
-.stat span {
+.stat > span {
+  /* direct child only: the CountUp span inside <b> must stay inline */
   display: block;
   margin-top: 4px;
   font-size: 12px;

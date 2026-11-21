@@ -14,7 +14,6 @@ export const hero = {
   lede: "I specialize in React, TypeScript and Node.js. I build products end to end, from the interface to the database, with clean and maintainable code.",
   stats: [
     { value: 2, suffix: "+", label: "years of commercial experience" },
-    { value: 3, suffix: "", label: "roles, from freelance to a team" },
     { text: "VNTU", label: "computer engineering" },
   ],
   photo: {
